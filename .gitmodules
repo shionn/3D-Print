@@ -1,0 +1,3 @@
+[submodule "GridFinity"]
+	path = GridFinity
+	url = git@github.com:shionn/Gridfinity.git 
