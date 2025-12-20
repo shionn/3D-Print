@@ -1,3 +1,6 @@
 [submodule "GridFinity"]
 	path = GridFinity
-	url = git@github.com:shionn/Gridfinity.git 
+	url = git@github.com:shionn/Gridfinity.git
+[submodule "LenovoM720Q"]
+	path = LenovoM720Q
+	url = git@github.com:shionn/LenovoM720Q.git
