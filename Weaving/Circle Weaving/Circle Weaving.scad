@@ -1,10 +1,15 @@
 diameter = 225;
-width = 10;
+width = 15;
 hole = 21;
 hole_diameter = 5;
 
+notch = true;
+
 difference() {
-	cylinder(3,diameter/2+width, diameter/2+width, true, $fn=64);
+	if (notch) 
+		cylinder(3,diameter/2+hole_diameter/3, diameter/2+hole_diameter/3, true, $fn=64);
+	else
+		cylinder(3,diameter/2+width, diameter/2+width, true, $fn=64);
 	cylinder(4,diameter/2-width, diameter/2-width, true, $fn=64);
 
 	for( r = [0 : 360/hole : 360]) {
