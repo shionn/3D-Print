@@ -30,7 +30,7 @@ difference() {
 		cylinder(32,r/2,r/2, $fn=16);
 } //*/
 
-translate ([20,0,0]) {
+/*translate ([20,0,0]) {
 	
 	// rotule
 	translate([boxW+rext/2, 10+rlen+lockgap, topH+lockgap ])
@@ -177,3 +177,47 @@ translate ([20,0,0]) {
 				cylinder(rlen+lockgap*2,rext/2,rext/2, $fn=16);
 	}
 }//*/
+
+translate([-20-bookW,0,0]) {
+	difference() {
+		cube([bookW, bookH, 1]);
+		
+		hletter = 12;
+		wtop = (bookW-2*4)/3;
+		htop = 50;
+		for (i = [0:2]) {
+			translate([i*wtop+i*2+2,bookH-htop-hletter,-1])
+				cube([wtop,htop,3]);
+		}
+		wbot = (bookW-2*3)/2;
+		hbotl =bookH-htop-hletter*2-2;
+		translate([2,2,-1])
+			cube([wbot, hbotl,3]); 
+		hbotr = (bookH-htop-hletter*4-2)/3;
+		for (i = [0:2]) {
+			translate([wbot+2*2, i*hbotr+hletter*i+2,-1])
+				cube([wbot,hbotr,3]);
+		}
+		
+		fsize= hletter-5;
+		translate([0,0,1-.05]) {
+			linear_extrude(1) {
+				translate([wtop/2+2,bookH-hletter/2,0])
+					text("Habi.",fsize,"DejaVu Sans:style=Condensed Bold",halign="center", valign="center");
+				translate([wtop*3/2+2*2,bookH-hletter/2,0])
+					text("Endu.",fsize,"DejaVu Sans:style=Condensed Bold",halign="center", valign="center");
+				translate([wtop*5/2+2*3,bookH-hletter/2,0])
+					text("Chance",fsize,"DejaVu Sans:style=Condensed Bold",halign="center", valign="center");
+				translate([wbot/2+2,hbotl+hletter/2+2,0])
+					text("Equip.",fsize,"DejaVu Sans:style=Condensed Bold",halign="center", valign="center");
+				translate([wbot*3/2+2*2,hbotr+hletter/2+2,0])
+					text("Ration",fsize,"DejaVu Sans:style=Condensed Bold",halign="center", valign="center");
+				translate([wbot*3/2+2*2,hbotr*2+hletter*3/2+2,0])
+					text("Potion",fsize,"DejaVu Sans:style=Condensed Bold",halign="center", valign="center");
+				translate([wbot*3/2+2*2,hbotr*3+hletter*5/2+2,0])
+					text("Or",fsize,"DejaVu Sans:style=Condensed Bold",halign="center", valign="center");
+			}
+		}
+	}
+	
+}
