@@ -30,7 +30,7 @@ difference() {
 		cylinder(32,r/2,r/2, $fn=16);
 } //*/
 
-/*translate ([20,0,0]) {
+translate ([20,0,0]) {
 	
 	// rotule
 	translate([boxW+rext/2, 10+rlen+lockgap, topH+lockgap ])
@@ -70,14 +70,14 @@ difference() {
 		translate([-10,-10,topH])
 			cube([boxW+20,boxH+20,30]);
 		// trou livre
-		translate([boxW-bookW-1,0,0])
+//		translate([boxW-bookW-1,0,0])
 			cube([bookW, bookH, 30]);
 		// trou des
 		translate([boxW-bookW-1,bookH+2,0]) {
 			w = (bookW-2)/2;
 			h = boxH - bookH - 2;
 			cube([w, h, 30]);
-			translate([w+2,0,0])
+			translate([w+2,0,0]) 
 				cube([w, h, 30]);
 		}
 		// trou crayon
@@ -115,7 +115,7 @@ difference() {
 	}
 } //*/
 
-/*translate ([200,0,0]) {
+translate ([200,0,0]) {
 	// rotule
 	translate([-rext/2, 10, bottomH+lockgap])
 		rotate([-90,0,0])
@@ -179,42 +179,45 @@ difference() {
 }//*/
 
 translate([-20-bookW,0,0]) {
+	tableW = bookW-.1;
+	tableH = bookH-.1;
+	tableGap = 3;
 	difference() {
-		cube([bookW, bookH, 1]);
+		cube([tableW, tableH, 1]);
 		
 		hletter = 12;
-		wtop = (bookW-2*4)/3;
+		wtop = (tableW-tableGap*4)/3;
 		htop = 50;
 		for (i = [0:2]) {
-			translate([i*wtop+i*2+2,bookH-htop-hletter,-1])
+			translate([i*wtop+i*tableGap+tableGap,tableH-htop-hletter,-1])
 				cube([wtop,htop,3]);
 		}
-		wbot = (bookW-2*3)/2;
-		hbotl =bookH-htop-hletter*2-2;
-		translate([2,2,-1])
+		wbot = (tableW-tableGap*3)/2;
+		hbotl = tableH-htop-hletter*2-tableGap;
+		translate([tableGap,tableGap,-1])
 			cube([wbot, hbotl,3]); 
-		hbotr = (bookH-htop-hletter*4-2)/3;
+		hbotr = (tableH-htop-hletter*4-tableGap)/3;
 		for (i = [0:2]) {
-			translate([wbot+2*2, i*hbotr+hletter*i+2,-1])
+			translate([wbot+tableGap*2, i*hbotr+hletter*i+tableGap,-1])
 				cube([wbot,hbotr,3]);
 		}
 		
-		fsize= hletter-5;
+		fsize = hletter-5;
 		translate([0,0,1-.05]) {
 			linear_extrude(1) {
-				translate([wtop/2+2,bookH-hletter/2,0])
+				translate([wtop/2+tableGap,tableH-hletter/2,0])
 					text("Habi.",fsize,"DejaVu Sans:style=Condensed Bold",halign="center", valign="center");
-				translate([wtop*3/2+2*2,bookH-hletter/2,0])
+				translate([wtop*3/2+tableGap*2,tableH-hletter/2,0])
 					text("Endu.",fsize,"DejaVu Sans:style=Condensed Bold",halign="center", valign="center");
-				translate([wtop*5/2+2*3,bookH-hletter/2,0])
+				translate([wtop*5/2+tableGap*3,tableH-hletter/2,0])
 					text("Chance",fsize,"DejaVu Sans:style=Condensed Bold",halign="center", valign="center");
-				translate([wbot/2+2,hbotl+hletter/2+2,0])
+				translate([wbot/2+tableGap,hbotl+hletter/2+tableGap,0])
 					text("Equip.",fsize,"DejaVu Sans:style=Condensed Bold",halign="center", valign="center");
-				translate([wbot*3/2+2*2,hbotr+hletter/2+2,0])
+				translate([wbot*3/2+tableGap*2,hbotr+hletter/2+tableGap,0])
 					text("Ration",fsize,"DejaVu Sans:style=Condensed Bold",halign="center", valign="center");
-				translate([wbot*3/2+2*2,hbotr*2+hletter*3/2+2,0])
+				translate([wbot*3/2+tableGap*2,hbotr*2+hletter*3/2+tableGap,0])
 					text("Potion",fsize,"DejaVu Sans:style=Condensed Bold",halign="center", valign="center");
-				translate([wbot*3/2+2*2,hbotr*3+hletter*5/2+2,0])
+				translate([wbot*3/2+tableGap*2,hbotr*3+hletter*5/2+tableGap,0])
 					text("Or",fsize,"DejaVu Sans:style=Condensed Bold",halign="center", valign="center");
 			}
 		}
