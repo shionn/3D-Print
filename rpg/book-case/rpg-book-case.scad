@@ -18,7 +18,7 @@ card_h = 90;
 
 box_gap = .2;
 
-translate([book_l+20,0,0]) {
+/*translate([book_l+20,0,0]) {
 	w = card_h;
 	p = card_l*2+2;
 	h = 35;
@@ -38,10 +38,27 @@ translate([book_l+20,0,0]) {
 		translate([card_h+1, card_l+2+card_l/2, h/2])
 			cube([4, card_l/3, h+5], true);
 	}
+}//*/
+
+translate([book_l+card_h+40,20,0]) {
+	token_r = 30/2;
+	difference() {
+		minkowski() {
+			cylinder(1,token_r, token_r,$fn=64);
+			sphere(1,$fn=16);
+		}
+		//dessin
+		translate([0,0,1.95])
+			color("red")
+				linear_extrude(2) {
+					scale(.065)
+						import("147686-607d8b.svg", center=true);
+				}
+	}
+
 }
 
-
-translate([10,0,0]) {
+/*translate([10,0,0]) {
 	
 	// rotule
 	translate([-lock_ext_r/2, 10, box_p+lock_gap])
@@ -96,9 +113,9 @@ translate([10,0,0]) {
 			cube([token_hole_l, token_hole_h, box_p+5]);
 		
   }
-}
+}//*/
 
-translate([-book_l-10,0,0]) {
+/*translate([-book_l-10,0,0]) {
 	// rotule
 	translate([box_l+lock_ext_r/2, 10+lock_len+lock_gap, box_p+lock_gap ])
 		rotate([-90,0,0])
@@ -134,4 +151,5 @@ translate([-book_l-10,0,0]) {
 				cylinder(lock_len+lock_gap*2,lock_ext_r/2,lock_ext_r/2, $fn=16);
 
 	} 
-}
+}//*/
+
