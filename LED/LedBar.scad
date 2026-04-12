@@ -1,29 +1,33 @@
 
 gap = .3;
 
-translate([-100,0,0])
-	straight(150);
+//translate([-100,0,0])
+	straight(207);
 
-translate([-65,0,0])
-	corner();
+//translate([-65,0,0])
+//	corner(80,80,20,20);
 
-module corner(l1 = 40, l2 = 40) {
-	translate([0,-15,0])
+module corner(l1 = 20, l2 = 20, l1topadd = 20, l2topadd = 20) {
+	translate([0,0,0])
 		difference() {
 			union() {
-				end_left(l1);
+				end_left(l1*2);
 				rotate([0,0,90])
-					end_right(l2);
+					end_right(l2*2);
 			}
 			screew_hole();
+			translate([l2-25,0,0])
+				screew_hole();
+			translate([0,-l1+25,0])
+				screew_hole();
 		}			
 	
 	color("red")
-		translate([0,35,0])
+		translate([-35,35,0])
 			union() {
-				cover_left(l1+20);
+				cover_left(l1*2+l1topadd*2);
 				rotate([0,0,90])
-					cover_right(l2+20);
+					cover_right(l2*2+l2topadd*2);
 			}
 }
 
@@ -31,9 +35,9 @@ module straight(l = 100) {
 	translate([-10,0,0])
 		difference() {
 			base(l);
-			translate([0, l/2-20, 0])
+			translate([0, l/2-25, 0])
 				screew_hole();
-			translate([0, -l/2+20, 0])
+			translate([0, -l/2+25, 0])
 				screew_hole();
 		}
 	color("red")
@@ -61,7 +65,7 @@ module cover(l = 10) {
 
 module screew_hole() {
 	translate([0,0,-1])
-		cylinder(4,2/2,10/2,$fn=16);	
+		cylinder(4,2/2,10/2,$fn=32);	
 }	
 
 module end_left(l=40) {
@@ -69,7 +73,7 @@ module end_left(l=40) {
 		base(l);
 		rotate([0,0,45])
 			translate([0,-15,-1])
-				cube(50);
+				cube(500);
 	}
 }	
 
@@ -78,7 +82,7 @@ module cover_left(l=40) {
 		cover(l);
 		rotate([0,0,45])
 			translate([0,-15,-1])
-				cube(50);
+				cube(500);
 	}
 }	
 
@@ -87,7 +91,7 @@ module end_right(l=40) {
 		base(l);
 		rotate([0,0,45])
 			translate([-15,0,-1])
-				cube(50);
+				cube(500);
 	}
 }	
 
@@ -96,7 +100,7 @@ module cover_right(l=40) {
 		cover(l);
 		rotate([0,0,45])
 			translate([-15,0,-1])
-				cube(50);
+				cube(500);
 	}
 }	
 
