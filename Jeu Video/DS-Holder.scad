@@ -1,5 +1,5 @@
 
-mode = "ds";
+mode = "snes";
 
 game_separation = .8;
 game_seperation_l = 20;
@@ -18,7 +18,14 @@ if (mode == "ds") {
 	game_p = 138.2;
 	game_l = 126; // ma mesure 124.7+.5
 	title_h = 20;
-	draw(game_l, game_p, game_h, game_count, title_h, "Nintendo_DS_Logo.svg", 0.11);
+	draw(game_l, game_p, game_h, game_count, title_h, "Nintendo_3DS_logo.svg", .055);
+} else if (mode == "snes") {
+	game_count = 5;
+	game_h = 37; //ma mesure 36
+	game_p = 170; // 180
+	game_l = 133; // 131
+	title_h = 25;
+	draw(game_l, game_p, game_h, game_count, title_h, "snes_logo.svg", .8);
 }
 
 
