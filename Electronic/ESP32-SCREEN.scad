@@ -9,7 +9,7 @@ angle = 45;
 
 rotate([0,-angle,0])
   translate([w/2,0,h/2])
-		frame();
+		frame();//*/
 
 s = 40;
 e = 68;
@@ -20,13 +20,13 @@ e = 68;
 			linear_extrude(p)
 				polygon([[s*cos(angle),0],[e*cos(angle),0],[e*cos(angle),e*cos(angle)],[s*cos(angle),s*cos(angle)]]);*/
 
-color("green")
+color("red")
 	translate([0,-15,0])
 		rotate([90,0,0])
 			linear_extrude(6)
 				polygon([[0,0],[w*cos(angle),0],[w*cos(angle),w*cos(angle)]]);
 
-color("green")
+color("red")
 	translate([0,15+6,0])
 		rotate([90,0,0])
 			linear_extrude(6)
