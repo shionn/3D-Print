@@ -2,18 +2,19 @@
 base();
 translate([(54-20)/2,0,0])
 	axed_wheels();
+	
 
 module base() {
 	l = 54;
-	w = 20;
+	w = 21;
 	p = 4;
 	hole = 7.5;
 	
-	translate([0,0,-.5])
+	//translate([0,0,-.5])
 		difference() {
 			minkowski() {
 				cube([l-w+1,1,p-1], center = true);
-				cylinder(1,(w-1)/2,(w-1)/2, $fn=63);
+				cylinder(1,(w-1)/2,(w-1)/2, $fn=63,true);
 			}
 			translate([(l-w)/2,0,-4])
 				cylinder(10, (hole/2+1), (hole/2+1), $fn=64);
@@ -37,7 +38,7 @@ module wheel() {
 	e = 7;
 	r = (d-e+1)/2;
 	minkowski() {
-		cylinder(1,r,r, $fn=64);
+		cylinder(1,r,r, $fn=64, true);
 		sphere((e-1)/2, $fn=32);
 	}
 }
