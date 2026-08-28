@@ -31,3 +31,21 @@ Voici mes étageres pour ranger les jeux. Il s'agit d'un model OpenSCAD paramét
 ![Photo du rendu](img/snes-2.jpg)
 ![Photo du rendu](img/snes-3.jpg)
 ![Photo du rendu](img/snes-4.jpg)
+
+## PS2
+
+* [Fichier 3mf](3mf/PS2-Holder.3mf)
+* [Fichier stl](stl/PS2-Holder.stl)
+
+![Photo du rendu](img/ps2-1.jpg)
+![Photo du rendu](img/ps2-2.jpg)
+![Photo du rendu](img/ps2-3.jpg)
+
+## PS3
+
+* [Fichier 3mf](3mf/PS3-Holder.3mf)
+* [Fichier stl](stl/PS3-Holder.stl)
+
+![Photo du rendu](img/ps3-1.jpg)
+![Photo du rendu](img/ps3-2.jpg)
+![Photo du rendu](img/ps3-3.jpg)

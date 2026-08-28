@@ -27,10 +27,10 @@ module side() {
 
 
 module disque() {
-	disque_d = 67.1;
+	disque_d = 67.2;
 	disque_h = 5;
 
-	side_e = 4;
+	side_e = 2;
 	side_h = 61 + disque_h -2;
 	side_h_bis = 35;
 	side_l = 21;
@@ -48,8 +48,8 @@ module disque() {
 					cube([side_e,side_l, side_h_bis]);
 
 		}
-		translate([0,0,-disque_h+2])
-			cylinder(disque_h,disque_d/2, disque_d/2, $fn=64);
+		translate([0,0,-0.001])
+			cylinder(2,disque_d/2, disque_d/2, $fn=64);
 	}
 }
 

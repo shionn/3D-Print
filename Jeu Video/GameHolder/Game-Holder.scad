@@ -1,5 +1,5 @@
 
-mode = "switch";
+mode = "ngc";
 
 game_separation = .8;
 game_seperation_l = 20;
@@ -34,6 +34,27 @@ if (mode == "ds") {
 	game_l = 171; // ma mesure 169.5
 	title_h = 25;
 	draw(game_l, game_p, game_h, game_count, title_h, "svg/switch-logo-simple.svg", .7);
+} else if (mode == "ps2") {
+	game_count = 12; // ~200
+	game_h = 15+.5; //ma mesure 15
+	game_p = 136-handling;
+	game_l = 192+.5; // ma mesure 192
+	title_h = 25;
+	draw(game_l, game_p, game_h, game_count, title_h, "svg/PlayStation 2 logo simple.svg", .4);
+} else if (mode == "ps3") {
+	game_count = 12; // ~200
+	game_h = 15+.5; //ma mesure 15
+	game_p = 136-handling;
+	game_l = 172.2+.5; // ma mesure 172.2
+	title_h = 25;
+	draw(game_l, game_p, game_h, game_count, title_h, "svg/PlayStation_3_logo_(2009) simple.svg", .55);
+} else if (mode == "ngc") {
+	game_count = 12; // ~200
+	game_h = 15.5+.5; //ma mesure 15.5
+	game_p = 135-handling;
+	game_l = 192+.5; // ma mesure 192
+	title_h = 20;
+	draw(game_l, game_p, game_h, game_count, title_h, "svg/nintendo-gamecube-seeklogo-4.svg", .4); 
 } 
 
 
@@ -62,5 +83,6 @@ module draw(game_l,game_p,game_h, game_count, title_h, logo, logo_scale) {
 				rotate([90,0,0])
 					linear_extrude(1)
 						scale(logo_scale)
-							import(logo, center=true);
+							//offset(0.5) 
+								import(logo, center=true);
 };
