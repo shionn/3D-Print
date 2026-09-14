@@ -11,11 +11,11 @@ escalier_h = 13;
 
 
 // batonnet de glace :
-pot_x=7;
+/*pot_x=7;
 pot_y=2;
 pot_w = 10+1;
 pot_p = pot_w;
-escalier_h = pot_w<;
+escalier_h = pot_w; */
 
 
 

@@ -1,5 +1,5 @@
 
-mode = "ngc";
+mode = "ps3";
 
 game_separation = .8;
 game_seperation_l = 20;
