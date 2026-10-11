@@ -12,7 +12,7 @@ p_text = 1.84; // mm
 //holder();
 //tokens();
 
- token("Creality", "Hyper", "Purple", "");
+token("Sunlu", "Pla+2", "Black", "");
 
 module holder() {
 	count = 28;
@@ -46,9 +46,10 @@ module tokens() {
 	translate([-70,0,0]) token("Creality", "Ender", "White", "");
 	translate([-105,0,0]) token("Creality", "Ender", "Grey", "");
 
+	translate([-35, -45,0]) token("Sunlu", "Pla+2", "Black", "");
 	translate([  0, -45,0]) token("Sunlu", "Pla+2", "Orange", "Soleil");
 	translate([ 35, -45,0]) token("Sunlu", "Pla+2", "Violet", "Lavand");
-	translate([ 70, -45,0]) token("Sunlu", "Pla+2", "Jaune", "Vif");
+	translate([ 70, -45,0]) token("Sunlu", "Pla+2", "Vivid", "Yellow");
 	translate([ 105,-45,0]) token("Sunlu", "Pla+2", "Marron", "Café");
 
 	translate([  0,-90,0]) token("Sunlu", "Pla+", "Grey", "");
